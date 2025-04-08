@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Главная - Task Manager{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h1 class="mb-4">Добро пожаловать в Task Manager</h1>
+    {% if not current_user.is_authenticated %}
+        <a class="btn btn-primary btn-lg" href="{{ url_for('main.register') }}">Начать использовать</a>
+    {% else %}
+        <a class="btn btn-success btn-lg" href="{{ url_for('main.dashboard') }}">Перейти к задачам</a>
+    {% endif %}
+</div>
+{% endblock %}

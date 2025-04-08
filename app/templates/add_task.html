@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Добавить задачу{% endblock %}
+{% block content %}
+<h2 class="mb-4">Добавить задачу</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.title.label }} {{ form.title(class="form-control") }}</div>
+    <div class="mb-3">{{ form.description.label }} {{ form.description(class="form-control") }}</div>
+    <div class="mb-3">{{ form.status.label }} {{ form.status(class="form-select") }}</div>
+    {{ form.submit(class="btn btn-success") }}
+</form>
+{% endblock %}
